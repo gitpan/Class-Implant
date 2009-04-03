@@ -1,0 +1,11 @@
+Changes
+LICENSE
+MANIFEST
+MANIFEST.SKIP
+META.yml
+Makefile.PL
+README
+examples/simple
+lib/Class/Implant.pm
+t/simple.t
+xt/simple.t

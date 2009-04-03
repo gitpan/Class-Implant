@@ -1,0 +1,10 @@
+--- 
+abstract: Manipulating Mix-In and Inheritance of Packages from outside
+author: 
+  - shelling <shelling@cpan.org>
+generated_by: Dist::Zilla::Plugin::MetaYaml version 1.004
+license: mit
+name: Class-Implant
+requires: 
+  Class::Inspector: 0
+version: 0.0.1_01
