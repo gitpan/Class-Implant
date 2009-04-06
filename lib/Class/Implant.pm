@@ -1,4 +1,5 @@
 package Class::Implant;
+# ABSTRACT: Manipulating mixin and inheritance out of packages
 
 use 5.008008;
 use strict;
@@ -37,11 +38,11 @@ __END__
 
 =head1 NAME
 
-Class::Implant
+Class::Implant - Manipulating mixin and inheritance out of packages
 
 =head1 VERSION
 
-version 0.0.1_01
+version 0.01_02
 
 =head1 SYNOPSIS
 
@@ -79,7 +80,7 @@ Class::Implant - Manipulating Mix-In and Inheritance of Packages from outside
 
 =head1 VERSION
 
-version 0.0.1_01
+version 0.01_02
 
 =head1 SEE ALSO
 

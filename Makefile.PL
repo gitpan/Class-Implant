@@ -8,8 +8,8 @@ WriteMakefile(
   DISTNAME  => 'Class-Implant',
   NAME      => 'Class::Implant',
   AUTHOR    => 'shelling\ \<shelling\@cpan\.org\>',
-  ABSTRACT  => 'Manipulating Mix-In and Inheritance of Packages from outside',
-  VERSION   => '0.0.1_01',
+  ABSTRACT  => 'Manipulating mixin and inheritance out of packages',
+  VERSION   => '0.01_02',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'mit') : ()),
   PREREQ_PM    => {

@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution Class-Implant, version
-0.0.1_01:
+0.01_02:
 
-  Manipulating Mix-In and Inheritance of Packages from outside
+  Manipulating mixin and inheritance out of packages
 
 This software is Copyright (c) 2009 by shelling <shelling@cpan.org>.
 

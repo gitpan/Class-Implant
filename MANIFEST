@@ -5,7 +5,11 @@ MANIFEST.SKIP
 META.yml
 Makefile.PL
 README
+README.markdown
 examples/simple
 lib/Class/Implant.pm
-t/simple.t
-xt/simple.t
+t/00-compile.t
+t/01-mixin.t
+t/02-inherit.t
+t/lib/Bar.pm
+t/lib/Foo.pm
