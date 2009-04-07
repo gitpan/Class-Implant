@@ -7,4 +7,4 @@ license: mit
 name: Class-Implant
 requires: 
   Class::Inspector: 0
-version: 0.01_02
+version: 0.01
