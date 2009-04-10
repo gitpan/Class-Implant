@@ -1,4 +1,6 @@
 package Class::Implant;
+our $VERSION = '0.02_01';
+
 # ABSTRACT: Manipulating mixin and inheritance out of packages
 
 use 5.008008;
@@ -7,11 +9,10 @@ no  strict "refs";
 use warnings;
 use Class::Inspector;
 
-our $VERSION = '0.01';
-
 sub import {
   *{(caller)[0] . "::implant"} = \&implant;
 }
+
 
 sub implant (@) {
   my $option = ( ref($_[-1]) eq "HASH" ? pop(@_) : undef );
@@ -20,19 +21,35 @@ sub implant (@) {
   my $target = caller;
 
   if (defined($option)) {
+  # options preprocessing
+
       $target = $option->{into} if defined($option->{into});
       eval qq{ package $target; use base qw(@class); } if $option->{inherit};
+
+      if (defined($option->{spec})) {
+        for (qw(match include exclude)) {
+          $option->{$_} = undef;
+        }
+      }
+
   }
 
+
   for my $class (reverse @class) {
-    for my $function (@{ _get_methods($class) }) {
+
+    my @methods = @{ get_methods($class) };
+    @methods = grep /$option->{match}/, @methods if $option->{match};
+
+    for my $function (@methods) {
       *{ $target . "::" . $function } = \&{ $class . "::" . $function };
     }
+
   }
 
 }
 
-sub _get_methods { Class::Inspector->functions(shift) }
+sub get_methods { Class::Inspector->functions(shift) }
+
 
 1;
 
@@ -44,7 +61,7 @@ Class::Implant - Manipulating mixin and inheritance out of packages
 
 =head1 VERSION
 
-version 0.01
+version 0.02_01
 
 =head1 SYNOPSIS
 
@@ -90,6 +107,16 @@ target package for injection.
 
 give 1 or any value to mark the inheritance
 
+=head2 spec
+
+specify what methods you want to import
+
+=head2 match
+
+give a pattern to import methods which match this pattern, for example,
+
+  implant qw(Foo Bar), { match => qr{wor\w+} }
+
 =head2 include
 
 this option is not available in 0.01
@@ -97,10 +124,6 @@ this option is not available in 0.01
 =head2 exclude
 
 this option is not available in 0.01
-
-=head2 EXPORT
-
-implant()
 
 =head1 AUTHOR
 
@@ -113,4 +136,8 @@ This software is Copyright (c) 2009 by shelling <shelling@cpan.org>.
 This is free software, licensed under:
 
   The MIT (X11) License
+
+=head1 EXPORT
+
+implant()
 

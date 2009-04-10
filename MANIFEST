@@ -11,5 +11,7 @@ t/00-compile.t
 t/01-mixin.t
 t/02-inherit.t
 t/03-outside.t
+t/04-match.t
 t/lib/Bar.pm
 t/lib/Foo.pm
+t/lib/Spam.pm
