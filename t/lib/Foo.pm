@@ -1,5 +1,5 @@
 package Foo;
-our $VERSION = '0.02_01';
+our $VERSION = '0.02_02';
 
 
 sub hello {"hello"}

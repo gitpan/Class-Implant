@@ -1,5 +1,5 @@
 package Class::Implant;
-our $VERSION = '0.02_01';
+our $VERSION = '0.02_02';
 
 # ABSTRACT: Manipulating mixin and inheritance out of packages
 
@@ -61,7 +61,7 @@ Class::Implant - Manipulating mixin and inheritance out of packages
 
 =head1 VERSION
 
-version 0.02_01
+version 0.02_02
 
 =head1 SYNOPSIS
 
